@@ -1,0 +1,121 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Form Data</title>
+</head>
+<body>
+    <h2>Form</h2>
+
+    <input type="text" id="nama" placeholder="Nama"><br><br>
+    <input type="email" id="email" placeholder="Email"><br><br>
+
+    <button onclick="kirimData()">Kirim</button>
+
+    <script>
+        function kirimData() {
+            fetch('/api/form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nama: document.getElementById('nama').value,
+                    email: document.getElementById('email').value
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert('Data berhasil dikirim');
+                console.log(data);
+            });
+        }
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 20px 25px;
+            border-radius: 6px;
+            width: 300px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Form Data</h2>
+
+        <input type="text" id="nama" placeholder="Nama">
+        <input type="email" id="email" placeholder="Email">
+
+        <button onclick="kirimData()">Kirim</button>
+    </div>
+
+    <script>
+        function kirimData() {
+            fetch('/api/form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nama: document.getElementById('nama').value,
+                    email: document.getElementById('email').value
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert('Data berhasil dikirim');
+                console.log(data);
+            });
+        }
+    </script>
+
+</body>
+</html>
